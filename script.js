@@ -1,11 +1,29 @@
 var button = document.getElementById('enter')
 var input = document.getElementById('userinput')
 var ul = document.querySelector("ul")
-button.addEventListener("click",function(){
-if (input.value.length > 6){
+
+function inputLength() {
+  return input.value.length;
+}
+
+function createListElement() {
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(input.value));
   ul.appendChild(li);
-  input.value = ""
+  input.value = "";
 }
-})
+
+function addRegAfterClick() {
+  if (inputLength() > 6) {
+    createListElement()
+  }
+}
+
+function addRegAfterEnter(event) {
+  if (inputLength() > 6 && event.keyCode === 13) {
+    createListElement()
+  }
+}
+
+  button.addEventListener("click", addRegAfterClick);
+  input.addEventListener("keypress", addRegAfterEnter);
