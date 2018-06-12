@@ -17,22 +17,22 @@ function createListElement() {
   input.value = "";
 }
 //ADDINF FUNCTION TO TARGET TOWN.
-var allCT = function(li){
-
-  var ctReg = [];
-
-  for (var i=0;i<regNumber.length;i++){
-    var reg = regNumber[i];
-
-        //check if the current reg starts with 'CY,CA'
-    if (reg.startsWith('CY')){
-            // add reg starting with 'CY,CA' to the list
-    	ctReg.push(regg);
-
-    }
-   }
-  return ctReg;
-}
+// var allCT = function(li){
+//
+//   var ctReg = [];
+//
+//   for (var i=0;i<regNumber.length;i++){
+//     var reg = regNumber[i];
+//
+//         //check if the current reg starts with 'CY,CA'
+//     if (reg.startsWith('CY')){
+//             // add reg starting with 'CY,CA' to the list
+//     	ctReg.push(regg);
+//
+//     }
+//    }
+//   return ctReg;
+// }
 // should print [CT License plates]
 //console.log(eReg);
 function addRegAfterClick() {
@@ -51,7 +51,9 @@ toggle between hiding and showing the dropdown content */
 function myDropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
+function clearData2() {
+ul.innerHTML = "";
+}
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -69,4 +71,4 @@ window.onclick = function(event) {
 
   button.addEventListener("click", addRegAfterClick);
   input.addEventListener("keypress", addRegAfterEnter);
-  eReset.addEventListener('click', clearData);
+  eReset.addEventListener('click', clearData2);
